@@ -1,86 +1,52 @@
 import java.util.*;
 public class BlackJack {
 
-
 public static void main(String[] args) {
 
-    /*
-     * Scanner && User Variables
-     */
+    /*Scanner && User Variables*/
     Scanner Blackjackgame = new Scanner(System.in);
     
-    
-    
-    
     int usersDecision = 0;
-
-    /*
-     * Users && Dealers Value Variables
-     */
+    /* Users && Dealers Value Variables*/
     int usersValue = 0;
     int dealersValue = 0;
 
-    /*
-     * Suit && Rank Arrays
-     */
+    /* Suit && Rank Arrays*/
     String[] card = { "2", "3", "4", "5", "6", "7", "8", "9", "10",
             "Jack", "Queen", "King", "Ace"};
-    /*
-     * Array Lists Users Cards && Dealers Cards
-     */
+    /* Array Lists Users Cards && Dealers Cards*/
     ArrayList<String> usersCards = new ArrayList<String>();
     ArrayList<String> dealersCards = new ArrayList<String>();
 
-        System.out.println("Welcome to Blackjack !\n"+"Remember to have fun!\nGood Luck!");
-    /*
-     * for loop to decide dealer first card
-     */
-    for (int i = 0; i <= 0; i++) {
-        int randomGenNumber = (int) (Math.random()*13);
-
-        dealersCards.add(card[randomGenNumber]);
+    System.out.println("Welcome to Blackjack !\n"+"Remember to have fun!\nGood Luck!");
+    /*for loop to decide dealer first card*/
+        for (int i = 0; i <= 0; i++) {
+            int randomGenNumber = (int) (Math.random()*13);
+                dealersCards.add(card[randomGenNumber]);
     }
-    /*
-     * displays dealers first card 
-     */
-  System.out.println("**************************************************************");
+    /* displays dealers first card */
+    System.out.println("**************************************************************");
     System.out.println("The Dealer cards are being dealt right now: " + dealersCards);
 
-
-    /*
-     * Deal Users Two Cards using a for loops
-     */
-    for (int i = 0; i <= 1; i++) {
-
-        int randomGenNumber = (int) (Math.random()*13);
-
-        usersCards.add(card[randomGenNumber]);
-
+    /*Deal Users Two Cards using a for loops*/
+        for (int i = 0; i <= 1; i++) {
+            int randomGenNumber = (int) (Math.random()*13);
+                usersCards.add(card[randomGenNumber]);
     }
-  
-    /*
-     * Print Users Two Cards, display the cards value
-     */
+    /*Print Users Two Cards, display the cards value*/
     System.out.println("Your Cards are being dealt right now : " + usersCards);
 
-    /*
-     * Check if the users has a Blackjack
-     */
-    if(usersCards.contains("Ace")) {
-        if(usersCards.contains("King") || usersCards.contains("Queen") || usersCards.contains("Jack") || usersCards.contains("10")){
-            System.out.println("You've Got BlackJack! Congratulations, You Win!");
-            ;
-        } else {
-            System.out.println("Think about your next move\n[1] Enter 1 to Hit \n[2] Enter 2 too Stay");
+    /*Check if the users has a Blackjack*/
+        if(usersCards.contains("Ace")) {
+             if(usersCards.contains("King") || usersCards.contains("Queen") || usersCards.contains("Jack") || usersCards.contains("10")){
+       System.out.println("You've Got BlackJack! Congratulations, You Win!");
+            } else {
+       System.out.println("Think about your next move\n[1] Enter 1 to Hit \n[2] Enter 2 too Stay");
         }
     } 
-    
-    
     else {
         System.out.println("Think about your next move\n[1] Enter 1 to Hit \n[2] Enter 2 to Stay");
     }
-
-
     /*
      * Take Users Decision the input
      * Check Users Decision the input
@@ -98,7 +64,6 @@ public static void main(String[] args) {
             System.out.println("You've decided to Hit  - your current card hand is : " + usersCards);
             System.out.println("I have given you your additional Card ");
             x = 1;
-
             /*
              * WHILE  = True
              * Generate New Cards
@@ -106,12 +71,9 @@ public static void main(String[] args) {
              * Bust/hit/Stay For User             */
             for (int i = 0; i <= 0; i++) {
                 int randomGenNumber = (int) (Math.random()*13);
-
-                usersCards.add(card[randomGenNumber]);
+                        usersCards.add(card[randomGenNumber]);
             }
-
             System.out.println(usersCards + "\n");
-
             /*
              * Generate Users Card Value
              */
@@ -153,24 +115,18 @@ public static void main(String[] args) {
            
             if(usersValue != 21 && usersValue <=21){
                 System.out.println("You Did Not Get BlackJack!\n[1] Enter 1 to Hit \n[2 Enter 2 too Stay");
-                 
-           
-              
             } else if (usersValue == 21) {
                 System.out.println("You Got BlackJack! Congratulations!");
             } 
-            
-            
             // this where is i need to fix the code 
             
              else if (usersValue > 21) {
                 System.out.println("You've Bust! You Lose!");
-              
             }
             
             break;
 
-        case 2: 
+            case 2: 
             System.out.println("You've decided to stay with your Cards: " + usersCards +"\n");
             x = 1;
             /*
@@ -261,12 +217,10 @@ public static void main(String[] args) {
              * Print and displays Dealers Value
              */
             System.out.println("Dealers Cards Value: " + dealersValue + "");
-
             /*
              * Take Action On Dealers Value
              */
              {
-
                 dealersValue = 0;   
                 for(int i = 0; i < dealersCards.size(); i++) {
                     if(dealersCards.get(i).equals("2")) {
@@ -340,8 +294,7 @@ public static void main(String[] args) {
 
                     }
                     System.out.println("Dealers Cards Value: " + dealersValue + "\n");
-                } 
-
+                }   
                 /*
                  * Checks dealersValue against usersValue
                  * Prints Response
@@ -371,13 +324,6 @@ public static void main(String[] args) {
                     }
                 }
 
-                
-               
-                
-                
-                
-                
-                
                 if(dealersValue == 21) {
                     System.out.println("Dealer Has BlackJack\n");
                    
@@ -385,14 +331,9 @@ public static void main(String[] args) {
                         System.out.println("You Have: " + usersValue + " You Drew");
                     }
                 }
-
-                
-               
                 if(dealersValue > 21) {
                     System.out.println("Dealer Has Busted - You Win!");
-                    
-                }
-
+                      }
             }
             break;
         default:
